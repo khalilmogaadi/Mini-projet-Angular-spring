@@ -1,0 +1,40 @@
+<div class="container">
+    <div>
+    <h2>Modifier un Album :</h2>
+    </div>
+    <form >
+        <div  class="col-sm-2 col-md-2 col-lg-2">
+        <label >ID Album</label>
+        <input readonly type="text" [(ngModel)]="currentAlbum.idAlbum"
+        name="idProduit" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4" >
+        <label >Nom Album</label>
+        <input type="text"[(ngModel)]= "currentAlbum.nomAlbum"
+        name="nomProduit" class="form-control">
+        </div>
+        <div class="col-sm-2 col-md-2 col-lg-2">
+        <label >Prix Album</label>
+        <input type="number" [(ngModel)]= "currentAlbum.prixAlbum"
+        name="prixProduit" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+        <label >Date création :</label>
+        <input type="date" [(ngModel)]= "currentAlbum.dateCreation"
+        name="dateCreation" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <select class="form-control form-control-lg" id="idGen" name="idGen"
+            [(ngModel)]="updatedGenId">
+            <option *ngFor="let gen of genres" [value]="gen.idGen" >
+            {{gen.nomGen}}
+            </option>
+            </select>
+            </div>
+        <div class="mt-2">
+        <button type="submit" (click)="updateAlbum()"class="btn btn-success">Modifier</button>
+        </div>
+        </form>
+</div>
+            
+
